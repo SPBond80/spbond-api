@@ -4,6 +4,11 @@ import pandas as pd
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"status": "API de Seguro Garantia online e operacional 🚀"}
+
+
 # Carregar a tabela Excel
 df = pd.read_excel("tabela_seguro.xlsx", header=None)
 df.columns = ['Valor Garantia', 'Prazo Dias', 'Custo Seguro']
